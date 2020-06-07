@@ -27,8 +27,12 @@ a:hover, a:focus {
   clear: both;
 }
 
+.hide {
+  display: none;
+}
+
 /* Animación suave */
-a, footer .cont-1170 .form-cont form button, .banner-vecchia .cont-1300 .titulo a i, .banner-vecchia-1 .arrow, .banner-vecchia-2 .arrow, .gallery .cont-1170 .fotos .box, .lista-faq li .js-pregunta .flecha {
+a, header, footer .cont-1170 .form-cont form button, .banner-vecchia .cont-1300 .titulo a i, .banner-vecchia-1 .arrow, .banner-vecchia-2 .arrow, .gallery .cont-1170 .fotos .box, .lista-faq li .js-pregunta .flecha {
   -webkit-transition: all .35s ease-in-out;
   transition: all .35s ease-in-out;
 }
@@ -274,13 +278,6 @@ header {
   z-index: 9999;
 }
 
-@media (max-width: 915px) {
-  header {
-    -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
-    box-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
-  }
-}
-
 header .cont-1300 {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -301,6 +298,10 @@ header .cont-1300 {
     -ms-flex-align: center;
     align-items: center;
   }
+}
+
+header .logo {
+  z-index: 9999;
 }
 
 header .logo img {
