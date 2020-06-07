@@ -1,0 +1,218 @@
+header
+	width: 100%
+	display: block
+	position: fixed
+	top: 0
+	left: 0
+	z-index: 9999
+	@media(max-width: 915px)
+		box-shadow: 0 0 1px rgba(0,0,0,0.5)
+	.cont-1300
+		display: flex
+		justify-content: space-between
+		align-items: flex-start
+		padding-top: 20px
+		position: relative
+		@media(max-width: 915px)
+			align-items: center
+	.logo 
+		img 
+			width: 174px
+			display: block
+			@media(max-width: 420px)
+				width: 100px
+	.let 
+		display: flex
+		justify-content: center 
+		align-items: flex-end 
+		flex-direction: column-reverse
+		width: 100%
+		@extend %animacion-nav
+		@media(max-width: 915px)
+			overflow-y: auto
+			flex-direction: column
+			justify-content: flex-start
+			align-items: center
+			box-shadow: 0 3px 1px rgba(0,0,0,0.5)
+			position: absolute
+			padding: 30px 15px
+			top: 93px
+			right: -150vw
+			width: 100%
+			height: calc(100vh - 52px)
+		&.is-active
+			right: 0
+			top: 0
+			opacity: 0.9
+			color: #000
+			background: $negro
+			padding-top: 150px
+			@media(max-width: 420px)
+				height: 100vh
+		&.scroll-bar
+			padding: 20px
+			background: rgba(0,0,0,0.8)
+			margin-top: 18px
+		.nav-principal
+			ul
+				li
+					display: inline-block
+					padding: 0 18px
+					@media(max-width: 1120px)
+						padding: 0 5px
+					@media(max-width: 915px)
+						display: block
+						text-align: center
+						padding: 0px
+						margin: 15px 0
+					&:last-child
+						padding-right: 0
+					a
+						font-size: 16px
+						color: #fff
+						font-weight: 600
+						@media(max-width: 1145px)
+							font-size: 16px
+						&:hover,
+						&.activo
+							color: $cream
+						i
+							color: $negro
+							font-weight: 900
+							&:hover,
+							&.activo
+								color: $cream
+	.nav-mobile
+		display: flex 
+		justify-content: center 
+		align-items: center
+		.acceso-mobile 
+			.icon-user 
+				font-size: 20px
+				color: $cream
+				border: solid 1px rgba($cream, 0.5)
+				border-radius: 50%
+				cursor: pointer
+				display: flex 
+				justify-content: center
+				align-items: flex-end
+				width: 30px
+				height: 30px
+			.desplegable	
+				position: absolute
+				display: flex
+				justify-content: flex-start
+				align-items: center 
+				flex-direction: column
+				top: 60.55px
+				left: -150vw
+				background-color: $cream
+				width: 100vw
+				height: calc(100vh - 61.55px)
+				padding: 30px 15px
+				@extend %animacion-nav
+				&.is-active
+					left: 0
+				h3 
+						// @extend %robotocondensed-bold
+						font-size: 18px
+						color: $cream
+						margin: 30px 0 20px
+		/*Hamburguesa*/
+
+		.hamburger
+			z-index: 99999
+			@media(min-width: 915px)
+				display: none
+		.hamburger,
+		.hamburger:focus
+			border: none
+			width: 50px
+			height: 50px
+			text-transform: none
+			margin: 0
+			overflow: visible
+			cursor: pointer
+			outline: none
+			z-index: 99999999
+			background-color: transparent
+			transition: all 250ms ease-in-out
+
+		.hamburger-box
+			display: inline-block
+			width: 20px
+			height: 20px
+			border-radius: 5px
+			position: relative
+			-webkit-transition: all .20s ease-in-out
+			-moz-transition: all .20s ease-in-out
+			-o-transition: all .20s ease-in-out
+			-ms-transition: all .20s ease-in-out
+			transition: all .20s ease-in-out
+
+		.hamburger:hover .hamburger-box
+			background: none
+
+		.hamburger-inner
+			display: block
+			margin-top: 1px
+			top: 50%
+			left: 0
+
+		.hamburger-inner,
+		.hamburger-inner::before,
+		.hamburger-inner::after
+			width: 40px
+			height: 4px
+			border-radius: 3px
+			background-color: $cream
+			position: absolute
+			transition-property: -webkit-transform
+			transition-property: transform
+			transition-property: transform, -webkit-transform
+			transition-duration: 0.15s
+			transition-timing-function: ease
+
+		.hamburger-inner::before,
+		.hamburger-inner::after
+			content: ''
+			display: block
+
+		.hamburger-inner::before
+			top: -10px
+
+		.hamburger-inner::after
+			bottom: -10px
+
+		//Efecto de hambuger
+		.hamburger--efecto .hamburger-box
+			-webkit-perspective: 80px
+			perspective: 80px
+
+		.hamburger--efecto .hamburger-inner
+			transition: background-color 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1), -webkit-transform 0.2s cubic-bezier(0.645, 0.045, 0.355, 1)
+			transition: transform 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), background-color 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1)
+			transition: transform 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), background-color 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1), -webkit-transform 0.2s cubic-bezier(0.645, 0.045, 0.355, 1)
+
+		.hamburger--efecto .hamburger-inner::after
+			transition: -webkit-transform 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1)
+			transition: transform 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1)
+			transition: transform 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1), -webkit-transform 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1)
+
+		.hamburger--efecto.is-active .hamburger-inner
+			background-color: transparent
+			-webkit-transform: rotateY(180deg)
+			transform: rotateY(180deg)
+
+		.hamburger--efecto.is-active .hamburger-inner::before
+			-webkit-transform: translate3d(0, 8px, 0) rotate(45deg)
+			transform: translate3d(0, 10px, 0) rotate(45deg)
+
+		.hamburger--efecto.is-active .hamburger-inner::after
+			-webkit-transform: translate3d(0, -8px, 0) rotate(-45deg)
+			transform: translate3d(0, -10px, 0) rotate(-45deg)
+
+		@media(max-width: 479px)
+			.hamburger,
+			.hamburger:focus
+				margin: 0
