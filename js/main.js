@@ -40,11 +40,14 @@ $(document).ready(function(){
 	// Anima el menú cuando hay scroll
 	$( window ).scroll(function(){
 		var $cabecera = $('.let');
+		var $cabeceras = $('.cabecera');
 		if( $(window).scrollTop() > 20){
 			$cabecera.addClass('scroll-bar');
+			$cabeceras.addClass('hide');
 		}else{
 			$cabecera.removeClass('scroll-bar');
 			$cabecera.removeClass('is-active');
+			$cabeceras.removeClass('hide');
 		}
 	});
 	// Oculta y muestra el menú cuando hay scroll

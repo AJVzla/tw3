@@ -5,8 +5,7 @@ header
 	top: 0
 	left: 0
 	z-index: 9999
-	@media(max-width: 915px)
-		box-shadow: 0 0 1px rgba(0,0,0,0.5)
+	@extend %animacion-suave
 	.cont-1300
 		display: flex
 		justify-content: space-between
@@ -16,6 +15,7 @@ header
 		@media(max-width: 915px)
 			align-items: center
 	.logo 
+		z-index: 9999
 		img 
 			width: 174px
 			display: block
